@@ -1,0 +1,18 @@
+ {% extends 'base.html' %}
+ {% block content %}
+<body>
+<br>
+<button type="button" class="btn btn-light"><a href="{% url 'add_product' %}"> ADD_PRODUCT </a></button>
+<br><br>
+{% for i in obj %}
+<h2><a href="{% url 'detail' i.id %}"> {{i.name}}</a></h2><br>
+<button type="button" class="btn btn-warning"><a href="{% url 'update' i.id %}"> UPDATE </a></button>
+<button type="button" class="btn btn-danger"><a href="{% url 'delete' i.id %}"> DELETE </a></button><br><br>
+{% endfor %}
+
+
+
+
+
+</body>
+ {% endblock %}
